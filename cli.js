@@ -21,9 +21,6 @@ if (argv.h !== undefined) {
 // Construct url
 const latitude = argv.n ? parseFloat(argv.n) : argv.s ? -1 * parseFloat(argv.s) : undefined
 const longitude = argv.e ? parseFloat(argv.e) : argv.w ? -1 * parseFloat(argv.w) : undefined
-if (latitude == undefined || longitude == undefined) {
-    process.exit(-1)
-}
 const timezone = argv.z ? argv.z : moment.tz.guess()
 const url = "https://api.open-meteo.com/v1/forecast?" + "latitude=" + latitude + "&longitude=" + longitude + "&timezone=" + timezone + "&daily=precipitation_hours"
 
