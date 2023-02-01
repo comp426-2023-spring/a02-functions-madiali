@@ -20,7 +20,13 @@ if (argv.h !== undefined) {
 
 // Construct url
 const latitude = argv.n ? parseFloat(argv.n) : argv.s ? -1 * parseFloat(argv.s) : undefined
+if (latitude == undefined) {
+    console.log("Latitude must be in range")
+}
 const longitude = argv.e ? parseFloat(argv.e) : argv.w ? -1 * parseFloat(argv.w) : undefined
+if (longitude == undefined) {
+    console.log("Longitude must be in range")
+}
 const timezone = argv.z ? argv.z : moment.tz.guess()
 const url = "https://api.open-meteo.com/v1/forecast?" + "latitude=" + latitude + "&longitude=" + longitude + "&timezone=" + timezone + "&daily=precipitation_hours"
 
