@@ -53,4 +53,4 @@ if (data.daily.precipitation_hours[days] > 0) {
 }
 else {
     console.log("You probably won't need your galoshes " + dayString)
-}
+} 
