@@ -33,9 +33,9 @@ const response = await fetch(url)
 // Get the data from the request
 const data = await response.json();
 
-// Output JSON
+// Pretty-print JSON
 if (argv.j !== undefined) {
-    console.log(data)
+    console.log(JSON.stringify(data, null, 2))
     process.exit(0)
 }
 
